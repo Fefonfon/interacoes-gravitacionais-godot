@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Interações Gravitacionais Simples"
+run/main_scene="res://menu_principal.tscn"
+config/features=PackedStringArray("4.6", "Double Precision", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+UnidadesGravitacionais="*res://scripts/unidades_gravitacionais.gd"
+
+[physics]
+
+3d/run_on_separate_thread=true
+3d/physics_engine="Jolt Physics"
+jolt_physics_3d/simulation/allow_sleep=false
+3d/default_gravity_vector=Vector3(0, 0, 0)
+3d/default_linear_damp=0.0
+3d/default_angular_damp=0.0
+2d/default_gravity_vector=Vector2(0, 0)
+common/physics_interpolation=true
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

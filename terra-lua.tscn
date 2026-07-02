@@ -1,0 +1,204 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/terra_lua.gd" id="1"]
+[ext_resource type="Script" uid="uid://bbvwklmsdchpv" path="res://scripts/camera_3d.gd" id="2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_painel"]
+bg_color = Color(0.04, 0.06, 0.13, 0.75)
+border_width_left = 1
+border_color = Color(0.25, 0.4, 0.75, 0.5)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
+[node name="TerraLua" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+script = ExtResource("2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.875, -0.153, 0.459, -0.077, 0.893, 0.444, -0.478, -0.423, 0.770, 0, 0, 0)
+light_energy = 0.3
+shadow_enabled = true
+
+[node name="Interface" type="CanvasLayer" parent="."]
+layer = 2
+[node name="PainelLateral" type="PanelContainer" parent="Interface"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -276.0
+offset_right = -8.0
+offset_top = 8.0
+offset_bottom = 540
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_painel")
+
+[node name="Margem" type="MarginContainer" parent="Interface/PainelLateral"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Layout" type="VBoxContainer" parent="Interface/PainelLateral/Margem"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="NomeCenario" type="Label" parent="Interface/PainelLateral/Margem/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Simulação"
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.7, 0.85, 1.0, 1.0)
+
+[node name="Sep1" type="HSeparator" parent="Interface/PainelLateral/Margem/Layout"]
+layout_mode = 2
+
+[node name="LinhaInfo" type="HBoxContainer" parent="Interface/PainelLateral/Margem/Layout"]
+layout_mode = 2
+
+[node name="NumCorpos" type="Label" parent="Interface/PainelLateral/Margem/Layout/LinhaInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Corpos: 0"
+theme_override_font_sizes/font_size = 11
+
+[node name="EspacoInfo" type="Control" parent="Interface/PainelLateral/Margem/Layout/LinhaInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TempoSimulacao" type="Label" parent="Interface/PainelLateral/Margem/Layout/LinhaInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0.00 anos"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.75, 0.95, 0.65, 1.0)
+
+[node name="Sep2" type="HSeparator" parent="Interface/PainelLateral/Margem/Layout"]
+layout_mode = 2
+[node name="IncluirSolButton" type="Button" parent="Interface/PainelLateral/Margem/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sol: Não  ○"
+
+[node name="SepSol" type="HSeparator" parent="Interface/PainelLateral/Margem/Layout"]
+layout_mode = 2
+[node name="PosCorpo" type="Label" parent="Interface/PainelLateral/Margem/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Corpo selecionado"
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.55, 0.72, 0.9, 1.0)
+
+[node name="ColunasCorpo" type="HBoxContainer" parent="Interface/PainelLateral/Margem/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ColEsq" type="VBoxContainer" parent="Interface/PainelLateral/Margem/Layout/ColunasCorpo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="PosCorpox" type="Label" parent="Interface/PainelLateral/Margem/Layout/ColunasCorpo/ColEsq"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "x: —"
+theme_override_font_sizes/font_size = 11
+
+[node name="PosCorpoy" type="Label" parent="Interface/PainelLateral/Margem/Layout/ColunasCorpo/ColEsq"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "y: —"
+theme_override_font_sizes/font_size = 11
+
+[node name="PosCorpoz" type="Label" parent="Interface/PainelLateral/Margem/Layout/ColunasCorpo/ColEsq"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "z: —"
+theme_override_font_sizes/font_size = 11
+
+[node name="ColDir" type="VBoxContainer" parent="Interface/PainelLateral/Margem/Layout/ColunasCorpo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="MassaInfo" type="Label" parent="Interface/PainelLateral/Margem/Layout/ColunasCorpo/ColDir"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "M: —"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.95, 0.85, 0.6, 1.0)
+
+[node name="DiametroInfo" type="Label" parent="Interface/PainelLateral/Margem/Layout/ColunasCorpo/ColDir"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Ø: —"
+theme_override_font_sizes/font_size = 11
+
+[node name="VelInfo" type="Label" parent="Interface/PainelLateral/Margem/Layout/ColunasCorpo/ColDir"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "v: —"
+theme_override_font_sizes/font_size = 11
+
+[node name="SepMassa" type="HSeparator" parent="Interface/PainelLateral/Margem/Layout"]
+layout_mode = 2
+
+[node name="LabelMassaSlider" type="Label" parent="Interface/PainelLateral/Margem/Layout"]
+layout_mode = 2
+text = "Ajustar massa do corpo"
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.55, 0.72, 0.9, 1.0)
+
+[node name="LinhaMassaSlider" type="HBoxContainer" parent="Interface/PainelLateral/Margem/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MassaSlider" type="HSlider" parent="Interface/PainelLateral/Margem/Layout/LinhaMassaSlider"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -8.0
+max_value = 1.0
+step = 0.01
+value = 0.0
+
+[node name="MassaSliderValor" type="Label" parent="Interface/PainelLateral/Margem/Layout/LinhaMassaSlider"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(64, 0)
+text = "—"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 10
+[node name="SepCtrl" type="HSeparator" parent="Interface/PainelLateral/Margem/Layout"]
+layout_mode = 2
+
+[node name="ListaCorpos" type="ItemList" parent="Interface/PainelLateral/Margem/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(0, 80)
+size_flags_vertical = 3
+
+[node name="MassaCorpo" type="OptionButton" parent="Interface/PainelLateral/Margem/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="NovoCorpo" type="Button" parent="Interface/PainelLateral/Margem/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "+ Novo Corpo"
+
+[node name="EspacoFlex" type="Control" parent="Interface/PainelLateral/Margem/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SairParaMenu" type="Button" parent="Interface/PainelLateral/Margem/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "← Menu Principal"

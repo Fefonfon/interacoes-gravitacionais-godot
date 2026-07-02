@@ -4,9 +4,12 @@
 
 # Godot-specific ignores
 .import/
+bin/
 export.cfg
 export_credentials.cfg
 *.tmp
+*.uid
+*.tpz
 
 # Imported translations (automatically generated from CSV files)
 *.translation

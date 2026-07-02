@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://ihjpud52s6uk"]
+
+[ext_resource type="Script" uid="uid://ck7jpxcjumgiu" path="res://scripts/menu_principal.gd" id="1_waigj"]
+
+[node name="MenuPrincipal" type="Control" unique_id=362763024]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_waigj")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1085632967]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0588235, 0.0784314, 0.137255, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=576463546]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=785078788]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Titulo" type="Label" parent="CenterContainer/VBoxContainer" unique_id=670639530]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "Interações Gravitacionais"
+horizontal_alignment = 1
+
+[node name="Subtitulo" type="Label" parent="CenterContainer/VBoxContainer" unique_id=846359086]
+layout_mode = 2
+text = "Selecione uma simulação para iniciar"
+horizontal_alignment = 1
+
+[node name="SistemaSolarButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=425842181]
+custom_minimum_size = Vector2(260, 44)
+layout_mode = 2
+text = "Iniciar Sistema Solar"
+
+[node name="SandboxButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=480566700]
+custom_minimum_size = Vector2(260, 44)
+layout_mode = 2
+text = "Iniciar Sandbox"
+
+[node name="FiguraOitoButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=574372165]
+custom_minimum_size = Vector2(260, 44)
+layout_mode = 2
+text = "Figura-oito (3 corpos)"
+
+[node name="TresCorposButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=792263473]
+custom_minimum_size = Vector2(260, 44)
+layout_mode = 2
+text = "Três Corpos (Euler/Lagrange)"
+
+[node name="TerraLuaButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1822061587]
+custom_minimum_size = Vector2(260, 44)
+layout_mode = 2
+text = "Sol–Terra–Lua"
+
+[node name="EstrelaBinariaButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1335023125]
+custom_minimum_size = Vector2(260, 44)
+layout_mode = 2
+text = "Estrela Binária"
+
+[node name="NBodyCaoticoButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1524448183]
+custom_minimum_size = Vector2(260, 44)
+layout_mode = 2
+text = "N-corpos Caótico"
+
+[node name="SairButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2022723137]
+custom_minimum_size = Vector2(260, 44)
+layout_mode = 2
+text = "Sair"

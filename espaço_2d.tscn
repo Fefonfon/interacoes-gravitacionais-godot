@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cb6k4okule82h"]
+
+[ext_resource type="Script" uid="uid://bu3qbiq0iv0es" path="res://espaço_2d.gd" id="1_qtg1l"]
+[ext_resource type="PackedScene" uid="uid://dfnrhhhac0xdt" path="res://objetos/obstaculo_2d.tscn" id="2_bjv2a"]
+
+[node name="Espaço2D" type="Node2D" unique_id=756068665]
+script = ExtResource("1_qtg1l")
+
+[node name="StaticBody2D" parent="." unique_id=1590891086 instance=ExtResource("2_bjv2a")]
+position = Vector2(207, -176)
+rotation = 0.386281634946431

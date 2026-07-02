@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://csnmn6v8lpo1l"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o2pvs"]
+bounce = 0.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o2pvs"]
+radius = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_3ru3i"]
+radius = 0.5
+height = 1.0
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=179286193]
+physics_material_override = SubResource("PhysicsMaterial_o2pvs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=227143211]
+shape = SubResource("SphereShape3D_o2pvs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=399857669]
+gi_mode = 2
+mesh = SubResource("SphereMesh_3ru3i")
