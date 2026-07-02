@@ -5,3 +5,10 @@ Repositório dedicado à disponibilização do projeto desenvolvido para meu TCC
 - Segure o botão do meio do mouse para controlar a câmera;
 - Clique nos planetas, ou na lista à direita da tela, para centralizar a câmera em outro planeta;
 - Pressione ESC ou clique em "Retornar ao menu principal", à direita da tela, para retornar ao menu principal.
+
+## Executar simulador:
+Navegue até a aba "Releases", à direita do navegador de arquivos da página principal desse repositório, ou clique [aqui]([url](https://github.com/Fefonfon/interacoes-gravitacionais-godot/releases))
+
+## Executar projeto:
+Baixe a versão 4.6.X do motor gráfico Godot em: [https://godotengine.org/pt-br/]([url](https://godotengine.org/pt-br/))
+e realize a importação do projeto.
